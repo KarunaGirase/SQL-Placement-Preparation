@@ -1,7 +1,6 @@
 -- ==========================================
 -- SQL Placement Preparation
 -- Day 1 - SQL Fundamentals
--- Author: Karuna
 -- Database: college
 -- ==========================================
 
@@ -41,4 +40,5 @@ DELETE FROM students
 WHERE id = 5;
 
 -- 7. Display All Students
+
 SELECT * FROM students;
