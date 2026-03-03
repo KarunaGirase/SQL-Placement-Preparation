@@ -1,0 +1,50 @@
+-- ==========================================
+-- SQL Placement Preparation
+-- Day 3 - Aggregate Functions + GROUP BY
+-- ==========================================
+
+
+-- (Optional) Insert More Records for Grouping Practice
+INSERT INTO students (id, name, age, branch, email)
+VALUES
+(6, 'Arjun', 21, 'CSE', 'arjun@gmail.com'),
+(7, 'Meera', 22, 'IT', 'meera@gmail.com');
+
+
+-- 1. Count total students
+SELECT COUNT(*) AS total_students
+FROM students;
+
+
+-- 2. Find average age
+SELECT AVG(age) AS average_age
+FROM students;
+
+
+-- 3. Find maximum age
+SELECT MAX(age) AS max_age
+FROM students;
+
+
+-- 4. Find minimum age
+SELECT MIN(age) AS min_age
+FROM students;
+
+
+-- 5. Count number of students in each branch
+SELECT branch, COUNT(*) AS total_students
+FROM students
+GROUP BY branch;
+
+
+-- 6. Find average age branch-wise
+SELECT branch, AVG(age) AS avg_age
+FROM students
+GROUP BY branch;
+
+
+-- 7. Display branches where total students > 1
+SELECT branch, COUNT(*) AS total_students
+FROM students
+GROUP BY branch
+HAVING COUNT(*) > 1;
